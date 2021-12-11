@@ -24,7 +24,7 @@ class CategoryController extends Controller
 
     public function add()
     {
-        $datalist = DB::table('categories')->get()->where('parent_id','0');
+        $datalist = DB::table('categories')->get()->where('parent_id', '0');
         //print_r($datalist);
         //exit();
         return view('admin.category_add', ['datalist' => $datalist]);
@@ -34,8 +34,8 @@ class CategoryController extends Controller
     /**
      * Insert Data
      *
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
-     * @param  \Illuminate\Http\Request  $request
      */
 
     public function create(Request $request)
@@ -56,7 +56,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,7 +67,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -78,35 +78,46 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category, $id)
     {
-        //
+        $data = Category::find($id);
+        $datalist = DB::table('categories')->get()->where('parent_id', '0');
+
+        return view('admin.category_edit', ['data' => $data, 'datalist' => $datalist]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category, $id)
     {
-        //
+        $data = Category::find($id);
+        $data->parent_id = $request->input('parent_id');
+        $data->title = $request->input('title');
+        $data->keywords = $request->input('keywords');
+        $data->description = $request->input('description');
+        $data->slug = $request->input('slug');
+        $data->status = $request->input('status');
+        $data->save();
+        return redirect()->route('admin_category');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category $category
+     * @param \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category,$id)
+    public function destroy(Category $category, $id)
     {
-        DB::table('categories')->where('id','=',$id)->delete();
+        DB::table('categories')->where('id', '=', $id)->delete();
         return redirect()->route('admin_category');
     }
 }
