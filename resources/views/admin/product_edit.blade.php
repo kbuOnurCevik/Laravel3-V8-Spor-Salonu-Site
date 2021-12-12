@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 
 @section('title','Edit Product')
+@section('javascript')
+<script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+@endsection
 
 @section('content')
     <!-- Container Fluid-->
@@ -52,7 +55,10 @@
                     </div>
                     <div class="form-group">
                         <label><b>Detail</b></label>
-                        <input type="text" name="detail" value="{{$data->detail}}" class="form-control">
+                        <textarea name="detail" >{{$data->detail}}</textarea>
+                        <script>
+                            CKEDITOR.replace( 'detail' );
+                        </script>
                     </div>
 
                     <div class="form-group">
