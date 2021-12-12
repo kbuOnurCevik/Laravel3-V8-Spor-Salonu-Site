@@ -19,7 +19,7 @@
         <div class="card mb-4">
 
             <div class="card-body">
-                <form action="{{route('admin_product_update',['id'=>$data->id])}}" method="post">
+                <form action="{{route('admin_product_update',['id'=>$data->id])}}" method="post"    enctype="multipart/form-data" >
                     @csrf
                     <div class="form-group">
                         <label><b>Parent</b></label>
@@ -60,10 +60,16 @@
                             CKEDITOR.replace( 'detail' );
                         </script>
                     </div>
-
                     <div class="form-group">
                         <label><b>Slug</b></label>
                         <input type="text" name="slug" value="{{$data->slug}}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label><b>Image</b></label>
+                        <input type="file" name="image" value="{{$data->image}}" class="form-control">
+                        @if ($data->image)
+                            <img src="{{Storage::url($data->image)}}" height="60" alt="">
+                        @endif
                     </div>
                     <div class = "form-group">
                         <label><b>Status</b></label>
