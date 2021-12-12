@@ -15,6 +15,13 @@
 
     </li>
     <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('admin_products')}}">
+            <i class="far fa-fw fa-window-maximize"></i>
+            <span>Products</span>
+        </a>
+
+    </li>
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
            aria-controls="collapseForm">
             <i class="fab fa-fw fa-wpforms"></i>
