@@ -106,8 +106,12 @@ class ProductController extends Controller
         $data->month = $request->input('month');
         $data->tax = (int)$request->input('tax');
         $data->detail = $request->input('detail');
-        $data->image = Storage::putFile('images', $request->file('image'));
+
+        if ($request->file('image') !== null){
+            $data->image = Storage::putFile('images', $request->file('image'));
+        }
         $data->save();
+        
         return redirect()->route('admin_products');
     }
 
