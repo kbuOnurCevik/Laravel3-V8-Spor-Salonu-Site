@@ -1,9 +1,6 @@
 <!-- Sidebar -->
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('admin_home')}}">
-        <div class="sidebar-brand-icon">
-            <img src="{{ asset('assets')}}/admin/img/logo/logo2.png">
-        </div>
+    <a class="sidebar-brand d-flex align-items-center justify-content-left" href="{{route('admin_home')}}">
         <div class="sidebar-brand-text mx-3">Admin Home</div>
     </a>
 

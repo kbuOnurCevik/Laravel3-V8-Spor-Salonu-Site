@@ -6,7 +6,6 @@
 @endsection
 
 @section('content')
-    <!-- Container Fluid-->
     <div class="container-fluid" id="container-wrapper">
 
         <div class="row">
@@ -163,7 +162,7 @@
                                     </script>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary text-left col-1 col-sm-1" style="margin-left:20px;margin-bottom: 10px">Update Setting</button>
+                            <button type="submit" class="btn btn-primary" style="margin-left:20px;margin-bottom: 10px">Update Setting</button>
                         </div>
 
                     </div>
@@ -175,7 +174,4 @@
     </div>
 
 
-
-
-    <!---Container Fluid-->
 @endsection
