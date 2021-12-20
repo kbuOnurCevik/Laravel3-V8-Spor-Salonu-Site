@@ -348,7 +348,6 @@ ol {
 	position: relative;
 	z-index: 1;
 }
-
 .nav-menu ul li .dropdown {
 	position: absolute;
 	left: -30px;
@@ -368,6 +367,21 @@ ol {
 .nav-menu ul li .dropdown li {
 	margin-right: 0;
 	display: block;
+}
+.sub-menu{
+    display: none;
+}
+.nav-menu ul li .dropdown li:hover .sub-menu{
+    display: block;
+    position: absolute;
+    margin-top: -48px;
+    margin-left: 180px;
+    width: 180px;
+    background: #252525;
+    text-align: left;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .nav-menu ul li .dropdown li a {
@@ -3255,3 +3269,4 @@ ol {
 		font-size: 28px;
 	}
 }
+
