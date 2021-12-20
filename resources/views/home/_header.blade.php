@@ -26,7 +26,7 @@
                                     <div class="sub-menu">
                                         <ul>
                                             @if(count($rs->children))
-                                            <li><a href="#">@include('categorytree',['children' => $rs->children])</a></li>
+                                            <li><a href="#">@include('home.categorytree',['children' => $rs->children])</a></li>
 
                                             @endif
                                         </ul>
