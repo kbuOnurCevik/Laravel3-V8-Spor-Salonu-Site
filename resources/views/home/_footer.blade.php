@@ -1,3 +1,6 @@
+@php
+$setting = \App\Http\Controllers\HomeController::getsetting()
+@endphp
 <!-- Footer Section Begin -->
 <section class="footer-section">
     <div class="container">
@@ -7,14 +10,13 @@
                     <div class="fa-logo">
                         <a href="#"><img src="{{ asset('assets')}}/img/logo.png" alt=""></a>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore dolore magna aliqua endisse ultrices gravida lorem.</p>
+                    <p>En güncel bilgiler için bizi sosyal medyadan takip etmeyi unutmayın.
+                        Aşağıdaki sosyal medya logolarımıza tıklayarak doğrudan sayfalarımıza gidebilirsiniz.</p>
                     <div class="fa-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa  fa-envelope-o"></i></a>
+                        @if ($setting->facebook != null) <a href="{{$setting->facebook}}" target="_blank"><i class="fa fa-facebook"></i></a> @endif
+                            @if ($setting->twitter != null) <a href="{{$setting->twitter}}" target="_blank"><i class="fa fa-twitter"></i></a> @endif
+                            @if ($setting->instagram != null) <a href="{{$setting->instagram}}" target="_blank"><i class="fa fa-instagram"></i></a> @endif
+
                     </div>
                 </div>
             </div>
@@ -22,7 +24,7 @@
                 <div class="fs-widget">
                     <h4>Useful links</h4>
                     <ul>
-                        <li><a href="#">About</a></li>
+                        <li><a href="{{route('home')}}">About</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Classes</a></li>
                         <li><a href="#">Contact</a></li>
@@ -51,7 +53,7 @@
                         </ul>
                     </div>
                     <div class="fw-recent">
-                        <h6><a href="#">Fitness: The best exercise to lose belly fat and tone up...</a></h6>
+                        <h6><a href="#">Fitness: The best exercise to lose belly fat and tone up.</a></h6>
                         <ul>
                             <li>3 min read</li>
                             <li>20 Comment</li>
@@ -64,7 +66,7 @@
             <div class="col-lg-12 text-center">
                 <div class="copyright-text">
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | {{$setting->company}}
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                 </div>
             </div>

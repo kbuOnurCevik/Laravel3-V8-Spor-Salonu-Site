@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="logo">
-                    <a href="./index.html">
+                    <a href="/home">
                         <img src="{{ asset('assets')}}/img/logo.png" alt="">
                     </a>
                 </div>
@@ -15,37 +15,48 @@
             <div class="col-lg-6">
                 <nav class="nav-menu">
                     <ul>
-                        <li  class="active"><a href="#">Categories</a>
+                        <li class="active"><a href="/home">Home</a></li>
+
+                        <li><a href="#">Categories</a>
                             <ul class="dropdown">
 
-
-
-
                                 @foreach($parentCategories as $rs)
-                                <li><a href="#">{{$rs->title}}</a>
-                                    <div class="sub-menu">
-                                        <ul>
-                                            @if(count($rs->children))
-                                            <li><a href="#">@include('home.categorytree',['children' => $rs->children])</a></li>
+                                    <li><a href="#">{{$rs->title}}</a>
+                                        <div class="sub-menu">
+                                            <ul>
+                                                @if(count($rs->children))
+                                                    <li><a href="#">@include('home.categorytree',['children' => $rs->children])</a></li>
 
-                                            @endif
-                                        </ul>
-                                    </div>
-                                </li>
+                                                @endif
+                                            </ul>
+                                        </div>
+                                    </li>
                                 @endforeach
-
-
-
-
                             </ul>
                         </li>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./about-us.html">About Us</a></li>
-                        <li><a href="./class-details.html">Classes</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                        <li><a href="./team.html">Our Team</a></li>
+                        <li><a href="{{route('aboutus')}}">About Us</a></li>
+                        <li><a href="{{route('fag')}}">FAQ</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
 
-                        <li><a href="./contact.html">Contact</a></li>
+
+                        @auth<li>
+                                <a href="#"><b>{{Auth::user()->name}}</b></a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Settings</a></li>
+                                    <li>
+                                        <a href="{{route('logout')}}">Logout</a>
+                                    </li>
+                                </ul>
+                        </li>
+                        @endauth
+                        @guest()
+                            <li> <a href="/home">Login</a></li>
+                            <li> <a href="/register">Register</a></li>
+                        @endguest
+
+
+
                     </ul>
                 </nav>
             </div>

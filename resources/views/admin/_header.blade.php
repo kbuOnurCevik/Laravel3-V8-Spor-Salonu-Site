@@ -178,7 +178,7 @@
                 </a>
                 <div class="dropdown-divider"></div>
                 @auth()
-                <a href="{{route('admin_logout')}}" class="dropdown-item"  >
+                <a href="{{route('logout')}}" class="dropdown-item"  >
                     @endauth
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Logout

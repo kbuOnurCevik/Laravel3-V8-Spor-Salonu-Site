@@ -1,11 +1,18 @@
+@php
+    $setting = \App\Http\Controllers\HomeController::getsetting()
+@endphp
 @extends('layouts.home')
 
-@section('title', 'Laravel Spor Salonu Sitesi')
-@section('description')
-        Türkiye'nin en olanaklı ve en tecrübeli fitness salonu !
+@section('title')
+
+{{$setting->title}}
+
 @endsection
 
-@section('keywords', 'Fitness, Salon, Spor, Boks, Kilo, Fit, Vücut')
+@section('description')
+    {{$setting->description}}
+@endsection
+@section('keywords', $setting->keywords)
 
 @section('content')
     <body>
