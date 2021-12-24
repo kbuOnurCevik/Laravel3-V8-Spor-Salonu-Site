@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row">
                 @include('home.usermenu')
-                <div class="col-lg-8 col-md-8">
+                <div class="col-lg-10 col-md-10">
                     @include('profile.show')
                 </div>
             </div>

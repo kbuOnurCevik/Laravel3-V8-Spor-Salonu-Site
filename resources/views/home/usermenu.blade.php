@@ -1,4 +1,4 @@
-<div class="col-lg-4 col-md-4">
+<div class="col-lg-2 col-md-2">
     <div class="sidebar-option">
         <div class="so-categories">
             <h5 class="title">User Panel</h5>
