@@ -42,7 +42,7 @@
                         @auth<li>
                                 <a href="#"><b>{{Auth::user()->name}}</b></a>
                                 <ul class="dropdown">
-                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="{{route('myprofile')}}">My Account</a></li>
                                     <li><a href="#">Settings</a></li>
                                     <li>
                                         <a href="{{route('logout')}}">Logout</a>

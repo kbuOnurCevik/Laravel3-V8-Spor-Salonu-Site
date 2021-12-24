@@ -1,3 +1,7 @@
+@php
+    $setting = \App\Http\Controllers\HomeController::getsetting()
+@endphp
+
 <!-- Get In Touch Section Begin -->
 <div class="gettouch-section">
     <div class="container">
