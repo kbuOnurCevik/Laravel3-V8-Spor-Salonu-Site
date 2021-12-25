@@ -1,5 +1,5 @@
 @foreach($children as $subcategory)
 
-    <li><a href="#">{{$subcategory->title}}</a></li>
+    <li><a href="{{route('categoryproducts',['id'=>$subcategory->id,'slug'=>$subcategory->slug])}}">{{$subcategory->title}}</a></li>
 
 @endforeach
