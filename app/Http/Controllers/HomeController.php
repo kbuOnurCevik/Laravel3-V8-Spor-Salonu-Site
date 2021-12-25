@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Models\Category;
+use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use MongoDB\Driver\Session;
 
 class HomeController extends Controller
 {
@@ -44,6 +46,22 @@ class HomeController extends Controller
         return view('home.contact',['setting'=>$setting]);
     }
 
+    public function sendmessage(Request $request)
+    {
+        $data = new Message();
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+
+        $data->save();
+
+        return redirect()->route('contact')->with('info','Mesajınız Kaydedilmiştir. Teşekkürler !');
+
+    }
+
+
     public function login(){
         return view('home.index');
     }
@@ -75,7 +93,7 @@ class HomeController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('');
     }
 
 }

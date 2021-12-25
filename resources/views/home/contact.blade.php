@@ -43,12 +43,15 @@
                         <h2>GET IN TOUCH</h2>
                     </div>
                     <div class="leave-comment">
-                        <form action="#">
-                            <input type="text" placeholder="Name">
-                            <input type="text" placeholder="Email">
-
-                            <textarea placeholder="Comment"></textarea>
-                            <button type="submit">Submit</button>
+                        @include('home.message')
+                        <form action="{{route('sendmessage')}}" method="post">
+                            @csrf
+                            <input type="text" name="name" placeholder="Name & Surname">
+                            <input type="text" name="phone" placeholder="Phone Number">
+                            <input type="email" name="email" placeholder="Email">
+                            <input type="text" name="subject" placeholder="Subject">
+                            <textarea class="text" name="message" placeholder="Your Message"></textarea>
+                            <button type="submit">Send Message</button>
                         </form>
                     </div>
 

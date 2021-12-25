@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -11,6 +12,7 @@ Route::get('/home',[\App\Http\Controllers\HomeController::class,'index'])->name(
 Route::get('/aboutus',[\App\Http\Controllers\HomeController::class,'aboutus'])->name('aboutus') ;
 Route::get('/fag',[\App\Http\Controllers\HomeController::class,'fag'])->name('fag') ;
 Route::get('/contact',[\App\Http\Controllers\HomeController::class,'contact'])->name('contact') ;
+Route::post('/sendmessage',[\App\Http\Controllers\HomeController::class,'sendmessage'])->name('sendmessage') ;
 
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function (){
@@ -34,6 +36,16 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::post('update/{id}',[\App\Http\Controllers\Admin\ProductController::class,'update'])->name('admin_product_update');
         Route::get('delete/{id}',[\App\Http\Controllers\Admin\ProductController::class,'destroy'])->name('admin_product_delete');
         Route::get('show',[\App\Http\Controllers\Admin\ProductController::class,'show'])->name('admin_product_show');
+    });
+
+    # Message
+    Route::prefix('messages')->group(function () {
+
+        Route::get('/',[MessageController::class,'index'])->name('admin_messages');
+        Route::get('edit/{id}',[MessageController::class,'edit'])->name('admin_message_edit');
+        Route::post('update/{id}',[MessageController::class,'update'])->name('admin_message_update');
+        Route::get('delete/{id}',[MessageController::class,'destroy'])->name('admin_message_delete');
+        Route::get('show',[MessageController::class,'show'])->name('admin_message_show');
     });
 
     # Product Image Galery
