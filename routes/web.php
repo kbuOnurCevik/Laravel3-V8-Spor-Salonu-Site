@@ -15,6 +15,7 @@ Route::get('/contact',[\App\Http\Controllers\HomeController::class,'contact'])->
 Route::post('/sendmessage',[\App\Http\Controllers\HomeController::class,'sendmessage'])->name('sendmessage') ;
 Route::get('/product/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'product'])->name('product') ;
 Route::get('/categoryproducts/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'categoryproducts'])->name('categoryproducts') ;
+Route::get('/addtocart/{id}',[\App\Http\Controllers\HomeController::class,'addtocart'])->name('addtocart') ;
 
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function (){

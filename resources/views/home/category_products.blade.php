@@ -35,8 +35,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <span>Our Plan</span>
-                        <h2>Choose your pricing plan</h2>
+                        <span>Paketler</span>
+                        <h2>PUSH YOUR LIMITS FORWARD</h2>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                                 <li>Month to mouth</li>
                                 <li>No time restriction</li>
                             </ul>
-                            <a href="#" class="primary-btn pricing-btn">Paketi Satın Al</a>
+                            <a href="{{route('addtocart',['id'=>$rs->id])}}" class="primary-btn pricing-btn">Paketi Satın Al</a>
                             <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
 
                         </div>

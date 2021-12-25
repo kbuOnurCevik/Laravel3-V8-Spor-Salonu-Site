@@ -20,6 +20,137 @@
     @include('home._menu')
 
 
+    <!-- Pricing Section Begin -->
+    <section class="pricing-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>Indirimli Paketlerimizi Kaçırma !</span>
+                        <h2>%10 Indirimli Paketlerimiz</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+
+                @foreach($picked as $rs)
+                    <div class="col-lg-4 col-md-8">
+                        <div class="ps-item">
+                            <h3>{{$rs->title}}</h3>
+                            <div class="pi-price">
+                                <h2>%10 DISCOUNT</h2>
+                                <h2>{{$rs->price * 0.9}}₺</h2>
+                                <span><a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="primary-btn pricing-btn">Detaylara Git</a></span>
+                            </div>
+                            <ul>
+                                <li><img src="{{Storage::url($rs->image)}}" alt=""></li>
+                                <li>Free riding</li>
+                                <li>Unlimited equipments</li>
+                                <li>Personal trainer</li>
+                                <li>Weight losing classes</li>
+                                <li>Month to mouth</li>
+                                <li>No time restriction</li>
+                            </ul>
+                            <a href="{{route('addtocart',['id'=>$rs->id])}}" class="primary-btn pricing-btn">Paketi Satın Al</a>
+                            <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section End -->
+
+
+    <!-- Pricing Section Begin -->
+    <section class="pricing-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>No Pain No Gain</span>
+                        <h2>Onerilen Paketler</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+
+                @foreach($daily as $rs)
+                    <div class="col-lg-4 col-md-8">
+                        <div class="ps-item">
+                            <h3>{{$rs->title}}</h3>
+                            <div class="pi-price">
+                                <h2>{{$rs->price}}₺</h2>
+                                <span><a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="primary-btn pricing-btn">Detaylara Git</a></span>
+                            </div>
+                            <ul>
+                                <li><img src="{{Storage::url($rs->image)}}" alt=""></li>
+                                <li>Free riding</li>
+                                <li>Unlimited equipments</li>
+                                <li>Personal trainer</li>
+                                <li>Weight losing classes</li>
+                                <li>Month to mouth</li>
+                                <li>No time restriction</li>
+                            </ul>
+                            <a href="{{route('addtocart',['id'=>$rs->id])}}" class="primary-btn pricing-btn">Paketi Satın Al</a>
+                            <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section End -->
+
+
+    <!-- Pricing Section Begin -->
+    <section class="pricing-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>PUSH YOUR LIMITS FORWARD</span>
+                        <h2>Son Gelen Paketler</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+
+                @foreach($last as $rs)
+                    <div class="col-lg-4 col-md-8">
+                        <div class="ps-item">
+                            <h3>{{$rs->title}}</h3>
+                            <div class="pi-price">
+                                <h2>{{$rs->price}}₺</h2>
+                                <span><a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="primary-btn pricing-btn">Detaylara Git</a></span>
+                            </div>
+                            <ul>
+                                <li><img src="{{Storage::url($rs->image)}}" alt=""></li>
+                                <li>Free riding</li>
+                                <li>Unlimited equipments</li>
+                                <li>Personal trainer</li>
+                                <li>Weight losing classes</li>
+                                <li>Month to mouth</li>
+                                <li>No time restriction</li>
+                            </ul>
+                            <a href="{{route('addtocart',['id'=>$rs->id])}}" class="primary-btn pricing-btn">Paketi Satın Al</a>
+                            <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section End -->
+
     <!-- ChoseUs Section Begin -->
     <section class="choseus-section spad">
         <div class="container">
@@ -162,79 +293,7 @@
     </section>
     <!-- Banner Section End -->
 
-    <!-- Pricing Section Begin -->
-    <section class="pricing-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>Our Plan</span>
-                        <h2>Choose your pricing plan</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-8">
-                    <div class="ps-item">
-                        <h3>Class drop-in</h3>
-                        <div class="pi-price">
-                            <h2>$ 39.0</h2>
-                            <span>SINGLE CLASS</span>
-                        </div>
-                        <ul>
-                            <li>Free riding</li>
-                            <li>Unlimited equipments</li>
-                            <li>Personal trainer</li>
-                            <li>Weight losing classes</li>
-                            <li>Month to mouth</li>
-                            <li>No time restriction</li>
-                        </ul>
-                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
-                        <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-8">
-                    <div class="ps-item">
-                        <h3>12 Month unlimited</h3>
-                        <div class="pi-price">
-                            <h2>$ 99.0</h2>
-                            <span>SINGLE CLASS</span>
-                        </div>
-                        <ul>
-                            <li>Free riding</li>
-                            <li>Unlimited equipments</li>
-                            <li>Personal trainer</li>
-                            <li>Weight losing classes</li>
-                            <li>Month to mouth</li>
-                            <li>No time restriction</li>
-                        </ul>
-                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
-                        <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-8">
-                    <div class="ps-item">
-                        <h3>6 Month unlimited</h3>
-                        <div class="pi-price">
-                            <h2>$ 59.0</h2>
-                            <span>SINGLE CLASS</span>
-                        </div>
-                        <ul>
-                            <li>Free riding</li>
-                            <li>Unlimited equipments</li>
-                            <li>Personal trainer</li>
-                            <li>Weight losing classes</li>
-                            <li>Month to mouth</li>
-                            <li>No time restriction</li>
-                        </ul>
-                        <a href="#" class="primary-btn pricing-btn">Enroll now</a>
-                        <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Pricing Section End -->
+
 
     <!-- Gallery Section Begin -->
     <div class="gallery-section">
