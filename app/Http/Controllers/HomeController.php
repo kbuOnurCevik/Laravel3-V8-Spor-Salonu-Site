@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Models\Category;
 use App\Models\Message;
+use App\Models\Product;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,9 +27,23 @@ class HomeController extends Controller
     {
 
         $setting = Setting::first();
-        return view('home.index',['setting'=>$setting]);
+        $slider = Product::select('id','title', 'image', 'price','slug')->limit(4)->get();
+        #print_r($slider);
+        # exit();
+        $data = [
+            'setting' => $setting,
+            'slider' => $slider,
+            'page' => 'home'
+        ];
+        return view('home.index',$data);
     }
 
+    public function product($id,$slug)
+    {
+        $data = Product::find($id);
+        print_r($data);
+        exit();
+    }
     public function aboutus()
     {
         $setting = Setting::first();

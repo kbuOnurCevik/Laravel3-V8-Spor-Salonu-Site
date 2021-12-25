@@ -1414,7 +1414,7 @@ ol {
 	margin-bottom: 8px;
 }
 
-.ts_slider .ts_item .ti_text .tt-rating i {
+.ts_slider .ts_item .ti_text  {
 	font-size: 12px;
 	color: #d49d09;
 }
