@@ -17,6 +17,7 @@ Route::get('/product/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'
 Route::get('/categoryproducts/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'categoryproducts'])->name('categoryproducts') ;
 Route::get('/addtocart/{id}',[\App\Http\Controllers\HomeController::class,'addtocart'])->name('addtocart') ;
 Route::post('/getproduct',[\App\Http\Controllers\HomeController::class,'getproduct'])->name('getproduct') ;
+Route::get('/productlist/{search}',[\App\Http\Controllers\HomeController::class,'productlist'])->name('productlist') ;
 
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function (){
