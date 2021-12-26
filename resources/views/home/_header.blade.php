@@ -1,6 +1,9 @@
 @php
     $parentCategories = \App\Http\Controllers\HomeController::categoryList()
 @endphp
+@php
+    $setting = \App\Http\Controllers\HomeController::getsetting()
+@endphp
 <!-- Header Section Begin -->
 <header class="header-section">
     <div class="container-fluid">
@@ -62,14 +65,20 @@
             </div>
             <div class="col-lg-3">
                 <div class="top-option">
-                    <div class="to-search search-switch">
-                        <i class="fa fa-search"></i>
-                    </div>
-                    <div class="to-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
+
+                    <div class="to-search">
+                        <form action="{{route('getproduct')}}" method="post">
+                            @csrf
+                            @livewire('search')
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+
+                        </form>
+                        @livewireScripts
+                        <div>
+                            <a href="{{$setting->facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="{{$setting->twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="{{$setting->instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
