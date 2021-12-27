@@ -33,6 +33,13 @@
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('admin_faq')}}"
+           aria-controls="collapseForm">
+            <i class="fab fa-fw fa-wpforms"></i>
+            <span>FAQ</span>
+        </a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
            aria-controls="collapseTable">
             <i class="fas fa-fw fa-table"></i>

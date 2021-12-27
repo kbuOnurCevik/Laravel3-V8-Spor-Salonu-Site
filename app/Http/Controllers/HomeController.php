@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Models\Category;
+use App\Models\Faq;
 use App\Models\Image;
 use App\Models\Message;
 use App\Models\Product;
@@ -99,9 +100,10 @@ class HomeController extends Controller
         return view('home.about',['setting'=>$setting]);
     }
 
-    public function fag()
+    public function faq()
     {
-        return view('home.index');
+        $datalist = Faq::all()->sortBy('position');
+        return view('home.faq',['datalist'=>$datalist]);
     }
 
     public function contact()
