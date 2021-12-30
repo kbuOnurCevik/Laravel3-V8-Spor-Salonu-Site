@@ -34,7 +34,7 @@
         <div class="container-fluid">
             <div class="row">
 
-                <div class="col-lg-6 p-0" >
+                <div class="col-lg-6 p-0">
                     <div class="gallery-section">
                         <div class="gallery">
 
@@ -69,18 +69,22 @@
                                 <span>Paket Süresi: {{$data->month}} Ay</span><br><br><br>
                                 <span>{{$data->description}}</span><br><br><br>
                                 <span>{!! $data->detail !!}</span><br><br><br>
-                                <a class="primary-btn"
-                                   href="{{route('product',['id'=>$data->id,'slug'=>$data->slug])}}">Shop
-                                    Now</a>
-
+                                <form action="{{route('user_order_add',['id'=>$data->id])}}" method="post">
+                                    @csrf
+                                    <p>Üyelik Başlangıç Tarihinizi Belirleyiniz</p>
+                                    <input type="date"  name="startday" value=<?("Y-m-d")?>>
+                                    <input type="hidden" name="price" value="{{$data->price}}">
+                                    <input type="hidden" name="month" value="{{$data->month}}">
+                                    <button type="submit" class="btn btn-primary">Buy Now</button>
+                                </form>
                             </div>
                         </div>
 
 
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- About US Section End -->

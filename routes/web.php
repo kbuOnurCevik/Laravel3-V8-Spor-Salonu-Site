@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name('home') ;
 Route::get('/home',[\App\Http\Controllers\HomeController::class,'index'])->name('homepage') ;
 Route::get('/aboutus',[\App\Http\Controllers\HomeController::class,'aboutus'])->name('aboutus') ;
-Route::get('/faq',[\App\Http\Controllers\HomeController::class,'faq'])->name('faq') ;
+Route::get('/faq',[\App\Http\Controllers\HomeController::class,'faq'])->name('faq');
 Route::get('/contact',[\App\Http\Controllers\HomeController::class,'contact'])->name('contact') ;
 Route::post('/sendmessage',[\App\Http\Controllers\HomeController::class,'sendmessage'])->name('sendmessage') ;
 Route::get('/product/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'product'])->name('product') ;
@@ -102,6 +103,20 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
 
     Route::get('/profile',[UserController::class,'index'])->name('userprofile');
+
+
+    #Order
+    Route::prefix('order')->group(function () {
+
+        Route::get('/', [OrderController::class, 'index'])->name('user_orders');
+        Route::post('create/{id}', [OrderController::class, 'create'])->name('user_order_add');
+        Route::post('store/{id}', [OrderController::class, 'store'])->name('user_order_store');
+        Route::get('edit/{id}', [OrderController::class, 'edit'])->name('user_order_edit');
+        Route::post('update/{id}', [OrderController::class, 'update'])->name('user_order_update');
+        Route::get('delete/{id}', [OrderController::class, 'destroy'])->name('user_order_delete');
+        Route::get('show/{id}', [OrderController::class, 'show'])->name('user_order_show');
+    });
+
 
 });
 

@@ -8,7 +8,6 @@
                         <div class="hi-text">
                             <span>Shape your body</span>
                             <h1>Be <strong>strong</strong> traning hard</h1>
-                            <a href="#" class="primary-btn">Get info</a>
                         </div>
                     </div>
 
@@ -25,8 +24,7 @@
                                                 <h5>{{$rs->title}}</h5>
                                                 <p>Fiyat:{{$rs->price}}TL</p>
                                                 <a class="primary-btn"
-                                                   href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}">Shop
-                                                    Now</a>
+                                                   href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}">Detaylara git</a>
                                                 <div class="tt-rating">
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
