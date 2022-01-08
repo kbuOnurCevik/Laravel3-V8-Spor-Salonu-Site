@@ -45,7 +45,7 @@
                                 <th>Finish Date</th>
                                 <th>Months</th>
                                 <th>Price</th>
-                                <th>Status</th>
+
 
                             </tr>
                             </thead>
@@ -58,7 +58,7 @@
                                 <td>{{$rs->finishdate}}</td>
                                 <td>{{$rs->months}}</td>
                                 <td>{{$rs->price}}₺</td>
-                                <td>{{$rs->status}}</td>
+
                                 </tbody>
                             @endforeach
                         </table>

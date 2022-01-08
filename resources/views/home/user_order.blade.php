@@ -44,6 +44,7 @@
                                 <th>Date</th>
                                 <th>Status</th>
                                 <th>Packet Details</th>
+                                <th>Note</th>
                             </tr>
                             </thead>
                             @foreach($datalist as $rs)
@@ -56,6 +57,7 @@
                                 <td>{{$rs->created_at}}</td>
                                 <td>{{$rs->status}}</td>
                                 <td><a href="{{route('user_order_show',['id'=>$rs->id])}}">Click</a></td>
+                                <td>{{$rs->note}}</td>
                                 </tbody>
                             @endforeach
                         </table>
