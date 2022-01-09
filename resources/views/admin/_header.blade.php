@@ -158,7 +158,10 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="{{asset('assets')}}/admin/img/boy.png" style="max-width: 60px">
+                @if (Auth::user()->profile_photo_path)
+                    <img src="{{Storage::url(Auth::user()->profile_photo_path)}}" class="img-profile rounded-circle" height="40" width="40"
+                         style="border-radius: 10px" alt="User Image">
+                @endif
 
                 <span class="ml-2 d-none d-lg-inline text-white small">{{Auth::user()->name}}</span>
 

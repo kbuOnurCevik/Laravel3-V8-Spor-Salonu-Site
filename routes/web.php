@@ -9,24 +9,23 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
-
-Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name('home') ;
-Route::get('/home',[\App\Http\Controllers\HomeController::class,'index'])->name('homepage') ;
-Route::get('/aboutus',[\App\Http\Controllers\HomeController::class,'aboutus'])->name('aboutus') ;
-Route::get('/faq',[\App\Http\Controllers\HomeController::class,'faq'])->name('faq');
-Route::get('/contact',[\App\Http\Controllers\HomeController::class,'contact'])->name('contact') ;
-Route::post('/sendmessage',[\App\Http\Controllers\HomeController::class,'sendmessage'])->name('sendmessage') ;
-Route::get('/product/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'product'])->name('product') ;
-Route::get('/categoryproducts/{id}/{slug}',[\App\Http\Controllers\HomeController::class,'categoryproducts'])->name('categoryproducts') ;
-Route::get('/addtocart/{id}',[\App\Http\Controllers\HomeController::class,'addtocart'])->name('addtocart') ;
-Route::post('/getproduct',[\App\Http\Controllers\HomeController::class,'getproduct'])->name('getproduct') ;
-Route::get('/productlist/{search}',[\App\Http\Controllers\HomeController::class,'productlist'])->name('productlist') ;
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
+Route::get('/aboutus', [\App\Http\Controllers\HomeController::class, 'aboutus'])->name('aboutus');
+Route::get('/faq', [\App\Http\Controllers\HomeController::class, 'faq'])->name('faq');
+Route::get('/contact', [\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
+Route::post('/sendmessage', [\App\Http\Controllers\HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::get('/product/{id}/{slug}', [\App\Http\Controllers\HomeController::class, 'product'])->name('product');
+Route::get('/categoryproducts/{id}/{slug}', [\App\Http\Controllers\HomeController::class, 'categoryproducts'])->name('categoryproducts');
+Route::get('/addtocart/{id}', [\App\Http\Controllers\HomeController::class, 'addtocart'])->name('addtocart');
+Route::post('/getproduct', [\App\Http\Controllers\HomeController::class, 'getproduct'])->name('getproduct');
+Route::get('/productlist/{search}', [\App\Http\Controllers\HomeController::class, 'productlist'])->name('productlist');
 
 //Admin
-Route::middleware('auth')->prefix('admin')->group(function (){
+Route::middleware('auth')->prefix('admin')->group(function () {
 
 #Admin Role
-    Route::middleware('admin')->group(function() {
+    Route::middleware('admin')->group(function () {
 
 
         Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
@@ -98,21 +97,36 @@ Route::middleware('auth')->prefix('admin')->group(function (){
             Route::get('delete/{id}', [AdminOrderController::class, 'destroy'])->name('admin_order_delete');
             Route::get('show/{id}', [AdminOrderController::class, 'show'])->name('admin_order_show');
         });
+
+        #User
+        Route::prefix('user')->group(function () {
+            //Route assigned name "admin.users"..
+            Route::get('/', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin_users');
+            Route::post('create', [\App\Http\Controllers\Admin\UserController::class, 'create'])->name('admin_user_add');
+            Route::post('store', [\App\Http\Controllers\Admin\UserController::class, 'store'])->name('admin_user_store');
+            Route::get('edit/{id}', [\App\Http\Controllers\Admin\UserController::class, 'edit'])->name('admin_user_edit');
+            Route::post('update/{id}', [\App\Http\Controllers\Admin\UserController::class, 'update'])->name('admin_user_update');
+            Route::get('delete/{id}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_user_delete');
+            Route::get('show/{id}', [\App\Http\Controllers\Admin\UserController::class, 'show'])->name('admin_user_show');
+            Route::get('userrole/{id}', [\App\Http\Controllers\Admin\UserController::class, 'user_roles'])->name('admin_user_roles');
+            Route::post('userrolestore/{id}', [\App\Http\Controllers\Admin\UserController::class, 'user_role_store'])->name('admin_user_role_add');
+            Route::get('userroledelete/{userid}/{roleid}', [\App\Http\Controllers\Admin\UserController::class, 'user_role_delete'])->name('admin_user_role_delete');
+        });
+
+
     });#admin
 });#auth
 
 
-
-
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
 
-    Route::get('/',[UserController::class,'index'])->name('myprofile');
+    Route::get('/', [UserController::class, 'index'])->name('myprofile');
 
 });
 
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
 
-    Route::get('/profile',[UserController::class,'index'])->name('userprofile');
+    Route::get('/profile', [UserController::class, 'index'])->name('userprofile');
 
 
     #Order
@@ -131,19 +145,17 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function () 
 });
 
 
-Route::get('/login',[\App\Http\Controllers\Admin\HomeController::class,'login'])->name('login');
-Route::post('/admin/logincheck',[\App\Http\Controllers\Admin\HomeController::class,'logincheck'])->name('admin_logincheck');
-Route::get('/logout',[\App\Http\Controllers\Admin\HomeController::class,'logout'])->name('logout');
+Route::get('/login', [\App\Http\Controllers\Admin\HomeController::class, 'login'])->name('login');
+Route::post('/admin/logincheck', [\App\Http\Controllers\Admin\HomeController::class, 'logincheck'])->name('admin_logincheck');
+Route::get('/logout', [\App\Http\Controllers\Admin\HomeController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
 
     Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home_login');
-    Route::post('/home/logincheck',[\App\Http\Controllers\Admin\HomeController::class,'logincheck'])->name('home_logincheck');
+    Route::post('/home/logincheck', [\App\Http\Controllers\Admin\HomeController::class, 'logincheck'])->name('home_logincheck');
     Route::get('/logout', [\App\Http\Controllers\HomeController::class, 'logout'])->name('home_logout');
 
 });
-
-
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
