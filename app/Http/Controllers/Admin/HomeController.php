@@ -29,8 +29,8 @@ class HomeController extends Controller
             }
 
             return back()->withErrors([
-                    'email' => 'The provided credentials do not match our records.',
-                ]);
+                'email' => 'The provided credentials do not match our records.',
+            ]);
         }
         else{
             return view('admin.login');
@@ -46,11 +46,5 @@ class HomeController extends Controller
 
         return redirect('/admin/login');
     }
-
-
-
-
-
-
 
 }
