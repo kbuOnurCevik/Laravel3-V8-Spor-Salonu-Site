@@ -205,7 +205,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <span>Our Classes</span>
+                        <span>Our Services</span>
                         <h2>WHAT WE CAN OFFER</h2>
                     </div>
                 </div>
@@ -266,7 +266,7 @@
                         </div>
                         <div class="ci-text">
                             <span>Training</span>
-                            <h4>Boxing</h4>
+                            <h4>Combat Sports</h4>
                             <a href="#"><i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
@@ -276,6 +276,7 @@
     </section>
     <!-- ChoseUs Section End -->
 
+@guest
     <!-- Banner Section Begin -->
     <section class="banner-section set-bg" data-setbg="{{ asset('assets')}}/img/banner-bg.jpg">
         <div class="container">
@@ -284,14 +285,16 @@
                     <div class="bs-text">
                         <h2>registration now to get more deals</h2>
                         <div class="bt-tips">Where health, beauty and fitness meet.</div>
-                        <a href="#" class="primary-btn  btn-normal">Appointment</a>
+                        <a href="/register" class="primary-btn  btn-normal">Register</a>
+                        <div class="bt-tips"><br>If you have an account already, just login.</div>
+                        <a href="/login" class="primary-btn  btn-normal">Login</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Banner Section End -->
-
+@endguest
 
 
     <!-- Gallery Section Begin -->
@@ -320,80 +323,6 @@
     </div>
     <!-- Gallery Section End -->
 
-    <!-- Team Section Begin -->
-    <section class="team-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="team-title">
-                        <div class="section-title">
-                            <span>Our Team</span>
-                            <h2>TRAIN WITH EXPERTS</h2>
-                        </div>
-                        <a href="#" class="primary-btn btn-normal appoinment-btn">appointment</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="ts-slider owl-carousel">
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="{{ asset('assets')}}/img/team/team-1.jpg">
-                            <div class="ts_text">
-                                <h4>Athart Rachel</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="{{ asset('assets')}}/img/team/team-2.jpg">
-                            <div class="ts_text">
-                                <h4>Athart Rachel</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="{{ asset('assets')}}/img/team/team-3.jpg">
-                            <div class="ts_text">
-                                <h4>Athart Rachel</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="{{ asset('assets')}}/img/team/team-4.jpg">
-                            <div class="ts_text">
-                                <h4>Athart Rachel</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="{{ asset('assets')}}/img/team/team-5.jpg">
-                            <div class="ts_text">
-                                <h4>Athart Rachel</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="ts-item set-bg" data-setbg="{{ asset('assets')}}/img/team/team-6.jpg">
-                            <div class="ts_text">
-                                <h4>Athart Rachel</h4>
-                                <span>Gym Trainer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Team Section End -->
-
-
-
-
-
     <!-- Search model Begin -->
     <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
@@ -404,10 +333,6 @@
         </div>
     </div>
     <!-- Search model end -->
-
-
-
-
 
     </body>
 @endsection

@@ -13,6 +13,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
 Route::get('/aboutus', [\App\Http\Controllers\HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/faq', [\App\Http\Controllers\HomeController::class, 'faq'])->name('faq');
+Route::get('/schedule', [\App\Http\Controllers\HomeController::class, 'schedule'])->name('schedule');
 Route::get('/contact', [\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [\App\Http\Controllers\HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/product/{id}/{slug}', [\App\Http\Controllers\HomeController::class, 'product'])->name('product');

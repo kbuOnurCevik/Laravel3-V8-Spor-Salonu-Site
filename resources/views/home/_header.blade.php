@@ -8,14 +8,14 @@
 <header class="header-section">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                 <div class="logo">
                     <a href="/home">
                         <img src="{{ asset('assets')}}/img/logo.png" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <nav class="nav-menu">
                     <ul>
                         <li class="active"><a href="/home">Home</a></li>
@@ -37,16 +37,23 @@
                                 @endforeach
                             </ul>
                         </li>
+                        <li><a href="{{route('schedule')}}">Information</a></li>
                         <li><a href="{{route('aboutus')}}">About Us</a></li>
                         <li><a href="{{route('faq')}}">FAQ</a></li>
                         <li><a href="{{route('contact')}}">Contact</a></li>
 
 
-                        @auth<li>
+                        @auth
+                            <li>
+                                @if (Auth::user()->profile_photo_path)
+                                    <img src="{{Storage::url(Auth::user()->profile_photo_path)}}"  height="40" width="40"
+                                         style="border-radius: 10px" alt="User Image">
+                                @endif
                                 <a href="#"><b>{{Auth::user()->name}}</b></a>
-                                <ul class="dropdown">
+
+                                <ul class="dropdown" style="margin-top: 30px" >
+
                                     <li><a href="{{route('myprofile')}}">My Account</a></li>
-                                    <li><a href="#">Settings</a></li>
                                     <li>
                                         <a href="{{route('logout')}}">Logout</a>
                                     </li>

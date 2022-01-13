@@ -75,15 +75,6 @@ class HomeController extends Controller
         return view('home.search_products',['search'=>$search,'datalist'=>$datalist]);
     }
 
-    public function addtocart($id)
-    {
-        echo "Add to CART";
-        $data = Product::find($id);
-        print_r($data);
-        exit();
-    }
-
-
     public function categoryproducts($id,$slug)
     {
         $datalist = Product::where('category_id',$id)->get();
@@ -104,6 +95,10 @@ class HomeController extends Controller
     {
         $datalist = Faq::all()->sortBy('position');
         return view('home.faq',['datalist'=>$datalist]);
+    }
+    public function schedule()
+    {
+        return view('home.schedule');
     }
 
     public function contact()

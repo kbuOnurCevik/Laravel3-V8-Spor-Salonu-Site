@@ -20,25 +20,14 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-sm-6">
+            <div class="col-lg-4 col-md-3 col-sm-6">
                 <div class="fs-widget">
                     <h4>Useful links</h4>
                     <ul>
-                        <li><a href="{{route('home')}}">About</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Classes</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-3 col-sm-6">
-                <div class="fs-widget">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">My account</a></li>
-                        <li><a href="#">Subscribe</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="{{route('aboutus')}}">About</a></li>
+                        <li><a href="{{route('faq')}}">FAQ</a></li>
+                        <li><a href="{{route('schedule')}}">Information</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,17 +36,12 @@ $setting = \App\Http\Controllers\HomeController::getsetting()
                     <h4>Tips & Guides</h4>
                     <div class="fw-recent">
                         <h6><a href="#">Physical fitness may help prevent depression, anxiety</a></h6>
-                        <ul>
-                            <li>3 min read</li>
-                            <li>20 Comment</li>
-                        </ul>
                     </div>
                     <div class="fw-recent">
                         <h6><a href="#">Fitness: The best exercise to lose belly fat and tone up.</a></h6>
-                        <ul>
-                            <li>3 min read</li>
-                            <li>20 Comment</li>
-                        </ul>
+                    </div>
+                    <div class="fw-recent">
+                        <h6><a href="#">Building confidence. Building fitness.</a></h6>
                     </div>
                 </div>
             </div>

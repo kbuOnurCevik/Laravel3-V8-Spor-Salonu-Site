@@ -12,7 +12,7 @@
             <h1 class="h3 mb-0 text-gray-800">Edit Product</h1>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin_home')}}">Home</a></li>
-                <li class="breadcrumb-item">Edit Product</li>
+                <li class="breadcrumb-item">Edit FAQ</li>
             </ol>
         </div>
 
@@ -47,7 +47,7 @@
                             <option>False</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Product</button>
+                    <button type="submit" class="btn btn-primary">Update FAQ</button>
                 </form>
             </div>
         </div>

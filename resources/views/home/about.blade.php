@@ -33,7 +33,7 @@
                 <div class="col-lg-8 p-0 m-auto">
                     <div class="blog-details-text">
 
-                            {!!$setting->aboutus!!}
+                        {!!$setting->aboutus!!}
 
                     </div>
                 </div>
@@ -44,32 +44,38 @@
                     <div class="cs-item">
                         <span class="flaticon-034-stationary-bike"></span>
                         <h4>Modern equipment</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            dolore facilisis.</p>
+                        <p>With the right gym equipment and exercises, strength training just twice a week has been
+                            shown to change the way your body looks and feels. Benefits include increased metabolism,
+                            enhanced sport performance and the prevention of injury</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="cs-item">
                         <span class="flaticon-033-juice"></span>
                         <h4>Healthy nutrition plan</h4>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
-                            facilisis.</p>
+                        <p>Minimally processed foods are the best for sports and weight lifting nutrition. Lean protein,
+                            complex carbs and fiber are your best friends, especially if you're trying to lose weight.
+                            Your body needs lean protein such as turkey, nonfat Greek yogurt, fish and egg whites to
+                            build muscle and stay full.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="cs-item">
                         <span class="flaticon-002-dumbell"></span>
-                        <h4>Proffesponal training plan</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            dolore facilisis.</p>
+                        <h4>Professional training plan</h4>
+                        <p>A professional development plan documents the goals, required skill and competency
+                            development, and objectives a staff member will need to accomplish in order to support
+                            continuous improvement and career development.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <div class="cs-item">
                         <span class="flaticon-014-heart-beat"></span>
                         <h4>Unique to your needs</h4>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
-                            facilisis.</p>
+                        <p>What does it mean to be fit? Finding a discrete definition is somewhat difficult. According
+                            to the dictionary, fitness means: “the quality or state of being fit." (1) (The definition
+                            of “fit” is: “sound physically and mentally.") (2) If you find those words somewhat vague,
+                            you’re not alone.</p>
                     </div>
                 </div>
             </div>
