@@ -2,7 +2,7 @@
 <head>
 
     <link href="{{asset('assets')}}/admin/img/logo/logo.png" rel="icon">
-    <title>@yield('title')</title>
+    <title>Order Detail</title>
     <link href="{{asset('assets')}}/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="{{asset('assets')}}/admin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="{{asset('assets')}}/admin/css/ruang-admin.min.css" rel="stylesheet">

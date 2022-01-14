@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Add Product')
+@section('title','Add FAQ')
 
 @section('javascript')
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>

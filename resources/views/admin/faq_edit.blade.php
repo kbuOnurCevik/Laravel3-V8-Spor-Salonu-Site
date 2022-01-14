@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Edit Product')
+@section('title','Edit FAQ')
 @section('javascript')
     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
 @endsection
@@ -9,7 +9,7 @@
     <!-- Container Fluid-->
     <div class="container-fluid" id="container-wrapper">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Edit Product</h1>
+            <h1 class="h3 mb-0 text-gray-800">Edit FAQ</h1>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin_home')}}">Home</a></li>
                 <li class="breadcrumb-item">Edit FAQ</li>
