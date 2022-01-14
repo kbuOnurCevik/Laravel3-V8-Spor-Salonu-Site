@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Livewire\Review;
 use App\Models\Category;
 use App\Models\Faq;
 use App\Models\Image;
@@ -50,9 +51,10 @@ class HomeController extends Controller
     {
         $data = Product::find($id);
         $datalist = Image::where('product_id',$id)->get();
+        $reviews = \App\Models\Review::where('product_id',$id)->get();
         #print_r($data);
         #exit();
-        return view('home.product_detail',['data'=>$data,'datalist'=>$datalist]);
+        return view('home.product_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
     }
 
     public function getproduct(Request $request)

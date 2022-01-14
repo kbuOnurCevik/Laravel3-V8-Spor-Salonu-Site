@@ -80,7 +80,9 @@
                         <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
 
                         </form>
+                        @section('footerjs')
                         @livewireScripts
+                        @endsection
                         <div>
                             <a href="{{$setting->facebook}}" target="_blank"><i class="fa fa-facebook"></i></a>
                             <a href="{{$setting->twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>

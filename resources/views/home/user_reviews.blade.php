@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title','My Orders')
+@section('title','My Reviews')
 
 
 @section('content')
@@ -14,7 +14,7 @@
                         <h2>User Profile</h2>
                         <div class="bt-option">
                             <a href="{{route('home')}}">Home</a>
-                            <span>My Orders</span>
+                            <span>My Reviews</span>
                         </div>
                     </div>
                 </div>
@@ -50,46 +50,44 @@
                                 </thead>
                             </table>
                         </div>
-                            <br>
-                            <h2>My Packet Orders</h2>
-                            <br>
-                        </div>
-                        @include('home.message')
-                        <div class="chart-table">
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Name</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
-                                    <th>Total</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Packet Details</th>
-                                    <th>Note</th>
-                                </tr>
-                                </thead>
-                                @foreach($datalist as $rs)
-                                    <tbody>
-                                    <td>{{$rs->id}}</td>
-                                    <td>{{$rs->name}}</td>
-                                    <td>{{$rs->phone}}</td>
-                                    <td>{{$rs->email}}</td>
-                                    <td>{{$rs->total}}₺</td>
-                                    <td>{{$rs->created_at}}</td>
-                                    <td>{{$rs->status}}</td>
-                                    <td><a href="{{route('user_order_show',['id'=>$rs->id])}}"><img src="{{ asset('assets')}}/img/click.png" alt="" height="40px"></a></td>
-                                    <td>{{$rs->note}}</td>
-                                    </tbody>
-                                @endforeach
-                            </table>
-                        </div>
+                        <br>
+                        <h2>My Reviews</h2>
+                        <br>
+                    </div>
 
-
+                    @include('home.message')
+                    <div class="chart-table">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Product</th>
+                                <th>Subject</th>
+                                <th>Review</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            @foreach($datalist as $rs)
+                                <tbody>
+                                <td>{{$rs->id}}</td>
+                                <td><a href="{{route('product',['id'=>$rs->product_id,'slug'=>$rs->product->slug])}}"
+                                       target="_blank">{{$rs->product->title}}</a></td>
+                                <td>{{$rs->subject}}</td>
+                                <td>{{$rs->review}}</td>
+                                <td>{{$rs->status}}</td>
+                                <td>{{$rs->created_at}}</td>
+                                <td><a href="{{route('user_review_delete',['id'=>$rs->id])}}"
+                                       onclick="return confirm('Delete ! Are you sure ?')"> <img src="{{ asset('assets')}}/img/click.png" alt="" height="40px"></a></td>
+                                </tbody>
+                            @endforeach
+                        </table>
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
     </section>
     </body>
 @endsection

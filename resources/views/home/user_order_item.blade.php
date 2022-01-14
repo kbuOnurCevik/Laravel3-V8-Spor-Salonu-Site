@@ -30,8 +30,31 @@
                 <div class="col-lg-12">
 
                     <div class="section-title chart-title">
-                        <span>User Profile</span>
+                        <span>User Panel</span>
+                        <div class="chart-table">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th><a href="{{route('myprofile')}}">My Profile</a></th>
+                                    <th><a href="{{route('user_orders')}}">My Packet Orders </a></th>
+                                    <th><a href="{{route('myreviews')}}">My Reviews </a></th>
+                                    <th><a href="{{route('logout')}}">Logout </a></th>
+                                    <th>
+                                        @php
+                                            $userRoles = Auth::user()->roles->pluck('name');
+                                        @endphp
+
+                                        @if($userRoles->contains('admin'))
+                                            <a href="{{route('admin_home')}}" target="_blank">Admin Panel</a>
+                                        @endif
+                                    </th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <br>
                         <h2>My Packet Details</h2>
+
                     </div>
 
                     <div class="chart-table">

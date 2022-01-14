@@ -40,7 +40,8 @@
 
                             <div class="grid-sizer"></div>
                             <div class="gs-item grid-wide set-bg" data-setbg="{{Storage::url($data->image)}}">
-                                <a href="{{Storage::url($data->image)}}" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
+                                <a href="{{Storage::url($data->image)}}" class="thumb-icon image-popup"><i
+                                        class="fa fa-picture-o"></i></a>
                             </div>
 
                             @foreach($datalist as $rs)
@@ -72,7 +73,7 @@
                                 <form action="{{route('user_order_add',['id'=>$data->id])}}" method="post">
                                     @csrf
                                     <p>Üyelik Başlangıç Tarihinizi Belirleyiniz</p>
-                                    <input type="date"  name="startday" value=<?("Y-m-d")?>>
+                                    <input type="date" name="startday" value=<?("Y-m-d")?>>
                                     <input type="hidden" name="price" value="{{$data->price}}">
                                     <input type="hidden" name="month" value="{{$data->month}}">
                                     <button type="submit" class="btn btn-primary">Buy Now</button>
@@ -88,6 +89,76 @@
         </div>
     </section>
     <!-- About US Section End -->
+
+
+    <!-- BMI Calculator Section Begin -->
+    <section class="bmi-calculator-section spad">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="col-lg-12" style="margin-top: -100px">
+
+                    <!-- Testimonial Section Begin -->
+                    <section class="testimonial-section spad">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="section-title">
+                                        <h2>Reviews</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ts_slider owl-carousel">
+
+                                @foreach($reviews as $rs)
+                                    <div class="ts_item">
+                                        <div class="row">
+                                            <div class="col-lg-12 text-center">
+                                                <div class="ti_pic">
+                                                    <img src="{{Storage::url($rs->product->image)}}" alt="">
+                                                </div>
+                                                <div class="ti_text">
+                                                    <h5>{{$rs->subject}}</h5>
+                                                    <p>{{$rs->review}}</p>
+                                                    <p>{{$rs->user->name}}<br>{{$rs->created_at}}</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+
+
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Testimonial Section End -->
+
+                </div>
+
+
+                <div class="col-lg-12">
+
+
+                    <div class="section-title chart-calculate-title">
+                        <h2>Share Your Reviews</h2>
+                    </div>
+                    <div class="chart-calculate-form">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                            viverra maecenas accumsan lacus vel facilisis.</p>
+
+                        @livewire('review',['id'=>$data->id])
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- BMI Calculator Section End -->
 
 
     </body>

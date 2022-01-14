@@ -122,6 +122,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
 
     Route::get('/', [UserController::class, 'index'])->name('myprofile');
+    Route::get('/myreviews', [UserController::class, 'myreviews'])->name('myreviews');
+    Route::get('/destroymyreview/{id}', [UserController::class, 'destroymyreview'])->name('user_review_delete');
+
 
 });
 
