@@ -39,9 +39,9 @@
                         <div class="ps-item">
                             <h3>{{$rs->title}}</h3>
                             <div class="pi-price">
-                                <h2>%10 DISCOUNT</h2>
+                                <h3>%10 DISCOUNT</h3>
                                 <h2>{{$rs->price * 0.9}}₺</h2>
-
+                                <h2>{{$rs->month}} Ay</h2>
                             </div>
                             <ul>
                                 <li><img src="{{Storage::url($rs->image)}}" alt=""></li>
@@ -85,7 +85,7 @@
                             <h3>{{$rs->title}}</h3>
                             <div class="pi-price">
                                 <h2>{{$rs->price}}₺</h2>
-
+                                <h2>{{$rs->month}} Ay</h2>
                             </div>
                             <ul>
                                 <li><img src="{{Storage::url($rs->image)}}" alt=""></li>
@@ -129,6 +129,7 @@
                             <h3>{{$rs->title}}</h3>
                             <div class="pi-price">
                                 <h2>{{$rs->price}}₺</h2>
+                                <h2>{{$rs->month}} Ay</h2>
                             </div>
                             <ul>
                                 <li><img src="{{Storage::url($rs->image)}}" alt=""></li>

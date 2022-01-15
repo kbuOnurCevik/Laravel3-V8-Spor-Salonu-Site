@@ -60,16 +60,16 @@
                 <div class="col-lg-6 p-0">
                     <div class="about-text te">
                         <div class="section-title">
-                            <span>Detaylar</span>
+                            <span>Details</span>
                             <h2>{{$data->title}}</h2>
                         </div>
                         <div class="at-desc">
 
                             <div class="section-title">
-                                <span>Fiyat : {{$data->price}}₺</span><br><br><br>
-                                <span>Paket Süresi: {{$data->month}} Ay</span><br><br><br>
-                                <span>{{$data->description}}</span><br><br><br>
-                                <span>{!! $data->detail !!}</span><br><br><br>
+                                <span>Fiyat : {{$data->price}}₺</span><br><br>
+                                <span>Paket Süresi: {{$data->month}} Ay</span><br><br>
+                                <p>{{$data->description}}</p><br><br>
+                                <span>{!! $data->detail !!}</span><br><br>
                                 <form action="{{route('user_order_add',['id'=>$data->id])}}" method="post">
                                     @csrf
                                     <p>Üyelik Başlangıç Tarihinizi Belirleyiniz</p>
@@ -145,9 +145,8 @@
                         <h2>Share Your Reviews</h2>
                     </div>
                     <div class="chart-calculate-form">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                            viverra maecenas accumsan lacus vel facilisis.</p>
+                        <p>Görüşlerinizi bizle paylaşabilirsiniz. Bu sayede diğer kullanıcılara yardım edebilirsiniz.
+                        Aşağıdaki konu ve inceleme kısmını doldurup yorum yapınız.</p>
 
                         @livewire('review',['id'=>$data->id])
 

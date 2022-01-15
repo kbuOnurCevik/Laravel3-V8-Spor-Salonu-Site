@@ -7,6 +7,8 @@
 @endsection
 @section('keywords', $data->keywords)
 
+@include('home._menu')
+
 @section('content')
     <body>
     <!-- Breadcrumb Section Begin -->
@@ -50,6 +52,7 @@
                             <h3>{{$rs->title}}</h3>
                             <div class="pi-price">
                                 <h2>{{$rs->price}}₺</h2>
+                                <h2>{{$rs->month}}Ay</h2>
                             </div>
                             <ul>
                                 <li><img src="{{Storage::url($rs->image)}}" alt=""></li>

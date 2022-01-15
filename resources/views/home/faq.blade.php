@@ -14,6 +14,8 @@
 
 @endsection
 
+@include('home._menu')
+
 @section('content')
     <body>
     <!-- Breadcrumb Section Begin -->

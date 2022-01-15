@@ -2,6 +2,8 @@
 
 @section('title','My Packets')
 
+@include('home._menu')
+
 
 @section('content')
     <body>

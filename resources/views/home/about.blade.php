@@ -7,6 +7,8 @@
 @endsection
 @section('keywords', $setting->keywords)
 
+@include('home._menu')
+
 @section('content')
     <body>
     <!-- Breadcrumb Section Begin -->

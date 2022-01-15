@@ -2,6 +2,7 @@
 
 @section('title','My Orders')
 
+@include('home._menu')
 
 @section('content')
     <body>

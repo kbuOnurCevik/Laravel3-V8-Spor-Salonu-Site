@@ -23,15 +23,9 @@
                                             <div class="ti_text">
                                                 <h5>{{$rs->title}}</h5>
                                                 <p>Fiyat:{{$rs->price}}TL</p>
+                                                <p>Süre:{{$rs->month}} Ay</p>
                                                 <a class="primary-btn"
                                                    href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}">Detaylara git</a>
-                                                <div class="tt-rating">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -2,6 +2,8 @@
 
 @section('title','User Profile')
 
+@include('home._menu')
+
 @section('content')
     <body>
 

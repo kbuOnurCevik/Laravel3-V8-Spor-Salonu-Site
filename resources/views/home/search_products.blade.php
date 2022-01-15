@@ -2,6 +2,7 @@
 
 @section('title',$search ." Product List")
 
+@include('home._menu')
 
 @section('content')
     <body>
@@ -46,7 +47,8 @@
                             <h3>{{$rs->title}}</h3>
                             <div class="pi-price">
                                 <h2>{{$rs->price}}₺</h2>
-                                <span><a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="primary-btn pricing-btn">Detaylara Git</a></span>
+                                <h2>{{$rs->month}} Ay</h2>
+
                             </div>
                             <ul>
                                 <li><img src="{{Storage::url($rs->image)}}" alt=""></li>
@@ -57,8 +59,8 @@
                                 <li>Month to mouth</li>
                                 <li>No time restriction</li>
                             </ul>
-                            <a href="{{route('addtocart',['id'=>$rs->id])}}" class="primary-btn pricing-btn">Paketi Satın Al</a>
-                            <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
+                            <span><a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}"
+                                     class="primary-btn pricing-btn">Detaylara Git</a></span>
 
                         </div>
                     </div>

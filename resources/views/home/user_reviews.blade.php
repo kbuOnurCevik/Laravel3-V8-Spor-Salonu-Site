@@ -3,6 +3,10 @@
 @section('title','My Reviews')
 
 
+
+@include('home._menu')
+
+
 @section('content')
     <body>
     <!-- Breadcrumb Section Begin -->
