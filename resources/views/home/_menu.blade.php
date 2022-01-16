@@ -16,8 +16,7 @@
             <img src="{{ asset('assets')}}/img/logo2.png" alt="">
         </a>
     </div>
-   <br>
-
+    <br>
 
 
     <div class="to-search">
@@ -39,11 +38,9 @@
     <div id="mobile-menu-wrap"></div>
 
 
-
     <nav class="canvas-menu mobile-menu">
 
         <ul>
-
 
 
             @auth
@@ -69,43 +66,37 @@
             @endguest
 
 
-
-
             <li><a href="#">Categories</a>
 
                 <ul class="dropdown">
 
-                        @foreach($parentCategories as $rs)
+                    @foreach($parentCategories as $rs)
                         <div class="dropdown">
                             <li><a href="#">{{$rs->title}}</a>
 
-                                    <ul>
-                                        @if(count($rs->children))
-                                            <li>
-                                                <a href="#">@include('home.categorytree',['children' => $rs->children])</a>
-                                            </li>
+                                <ul>
+                                    @if(count($rs->children))
+                                        <li>
+                                            <a href="#">@include('home.categorytree',['children' => $rs->children])</a>
+                                        </li>
 
-                                        @endif
-                                    </ul>
+                                    @endif
+                                </ul>
 
                             </li>
                         </div>
-                        @endforeach
-                    </ul>
+                    @endforeach
+                </ul>
             </li>
 
-            <li><a href="{{route('schedule')}}">Information</a></li>
+
+            <li><a href="{{route('gallery')}}">Gallery</a></li>
             <li><a href="{{route('aboutus')}}">About Us</a></li>
             <li><a href="{{route('contact')}}">Contact</a></li>
             <li><a href="{{route('faq')}}">FAQ</a></li>
 
         </ul>
     </nav>
-
-
-
-
-
 
 
 </div>

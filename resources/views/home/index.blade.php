@@ -64,6 +64,47 @@
 
     <!-- Pricing Section End -->
 
+    <!-- Pricing Section Begin -->
+    <section class="pricing-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>PUSH YOUR LIMITS FORWARD</span>
+                        <h2>Son Gelen Paketler</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+
+                @foreach($last as $rs)
+                    <div class="col-lg-4 col-md-8">
+                        <div class="ps-item">
+                            <h3>{{$rs->title}}</h3>
+                            <div class="pi-price">
+                                <h2>{{$rs->price}}₺</h2>
+                                <h2>{{$rs->month}} Ay</h2>
+                            </div>
+                            <ul>
+                                <li><img src="{{Storage::url($rs->image)}}" alt=""></li>
+                                <li>Free riding</li>
+                                <li>Unlimited equipments</li>
+                                <li>Personal trainer</li>
+                                <li>Weight losing classes</li>
+                                <li>Month to mouth</li>
+                                <li>No time restriction</li>
+                            </ul>
+                            <a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="primary-btn pricing-btn">Detaylara Git</a>
+                            <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section End -->
 
     <!-- Pricing Section Begin -->
     <section class="pricing-section spad">
@@ -108,221 +149,115 @@
 
     <!-- Pricing Section End -->
 
-
-    <!-- Pricing Section Begin -->
-    <section class="pricing-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>PUSH YOUR LIMITS FORWARD</span>
-                        <h2>Son Gelen Paketler</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-
-                @foreach($last as $rs)
-                    <div class="col-lg-4 col-md-8">
-                        <div class="ps-item">
-                            <h3>{{$rs->title}}</h3>
-                            <div class="pi-price">
-                                <h2>{{$rs->price}}₺</h2>
-                                <h2>{{$rs->month}} Ay</h2>
-                            </div>
-                            <ul>
-                                <li><img src="{{Storage::url($rs->image)}}" alt=""></li>
-                                <li>Free riding</li>
-                                <li>Unlimited equipments</li>
-                                <li>Personal trainer</li>
-                                <li>Weight losing classes</li>
-                                <li>Month to mouth</li>
-                                <li>No time restriction</li>
-                            </ul>
-                            <a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}" class="primary-btn pricing-btn">Detaylara Git</a>
-                            <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section End -->
-
-    <!-- ChoseUs Section Begin -->
-    <section class="choseus-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>Why chose us?</span>
-                        <h2>PUSH YOUR LIMITS FORWARD</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="cs-item">
-                        <span class="flaticon-034-stationary-bike"></span>
-                        <h4>Modern equipment</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            dolore facilisis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="cs-item">
-                        <span class="flaticon-033-juice"></span>
-                        <h4>Healthy nutrition plan</h4>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
-                            facilisis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="cs-item">
-                        <span class="flaticon-002-dumbell"></span>
-                        <h4>Proffesponal training plan</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            dolore facilisis.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="cs-item">
-                        <span class="flaticon-014-heart-beat"></span>
-                        <h4>Unique to your needs</h4>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
-                            facilisis.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ChoseUs Section End -->
-
-    <!-- Classes Section Begin -->
-    <section class="classes-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>Our Services</span>
-                        <h2>WHAT WE CAN OFFER</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="class-item">
-                        <div class="ci-pic">
-                            <img src="{{ asset('assets')}}/img/classes/class-1.jpg" alt="">
-                        </div>
-                        <div class="ci-text">
-                            <span>STRENGTH</span>
-                            <h5>Weightlifting</h5>
-                            <a href="#"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="class-item">
-                        <div class="ci-pic">
-                            <img src="{{ asset('assets')}}/img/classes/class-2.jpg" alt="">
-                        </div>
-                        <div class="ci-text">
-                            <span>Cardio</span>
-                            <h5>Indoor cycling</h5>
-                            <a href="#"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="class-item">
-                        <div class="ci-pic">
-                            <img src="{{ asset('assets')}}/img/classes/class-3.jpg" alt="">
-                        </div>
-                        <div class="ci-text">
-                            <span>STRENGTH</span>
-                            <h5>Kettlebell power</h5>
-                            <a href="#"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="class-item">
-                        <div class="ci-pic">
-                            <img src="{{ asset('assets')}}/img/classes/class-4.jpg" alt="">
-                        </div>
-                        <div class="ci-text">
-                            <span>Cardio</span>
-                            <h4>Indoor cycling</h4>
-                            <a href="#"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="class-item">
-                        <div class="ci-pic">
-                            <img src="{{ asset('assets')}}/img/classes/class-5.jpg" alt="">
-                        </div>
-                        <div class="ci-text">
-                            <span>Training</span>
-                            <h4>Combat Sports</h4>
-                            <a href="#"><i class="fa fa-angle-right"></i></a>
+    @guest
+        <!-- Banner Section Begin -->
+        <section class="banner-section set-bg" data-setbg="{{ asset('assets')}}/img/banner-bg.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="bs-text">
+                            <h2>registration now to get more deals</h2>
+                            <div class="bt-tips">Where health, beauty and fitness meet.</div>
+                            <a href="/register" class="primary-btn  btn-normal">Register</a>
+                            <div class="bt-tips"><br>If you have an account already, just login.</div>
+                            <a href="/login" class="primary-btn  btn-normal">Login</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- ChoseUs Section End -->
-
-@guest
-    <!-- Banner Section Begin -->
-    <section class="banner-section set-bg" data-setbg="{{ asset('assets')}}/img/banner-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="bs-text">
-                        <h2>registration now to get more deals</h2>
-                        <div class="bt-tips">Where health, beauty and fitness meet.</div>
-                        <a href="/register" class="primary-btn  btn-normal">Register</a>
-                        <div class="bt-tips"><br>If you have an account already, just login.</div>
-                        <a href="/login" class="primary-btn  btn-normal">Login</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Banner Section End -->
-@endguest
-
+        </section>
+        <!-- Banner Section End -->
+    @endguest
 
     <!-- Gallery Section Begin -->
     <div class="gallery-section">
         <div class="gallery">
             <div class="grid-sizer"></div>
-            <div class="gs-item grid-wide set-bg" data-setbg="{{ asset('assets')}}/img/gallery/gallery-1.jpg">
-                <a href="{{ asset('assets')}}/img/gallery/gallery-1.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
+            @foreach($gallery as $rs)
+            <div class="gs-item  set-bg" data-setbg="{{Storage::url($rs->image)}}">
+                <a href="{{Storage::url($rs->image)}}" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
             </div>
-            <div class="gs-item set-bg" data-setbg="{{ asset('assets')}}/img/gallery/gallery-2.jpg">
-                <a href="{{ asset('assets')}}/img/gallery/gallery-2.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
-            </div>
-            <div class="gs-item set-bg" data-setbg="{{ asset('assets')}}/img/gallery/gallery-3.jpg">
-                <a href="{{ asset('assets')}}/img/gallery/gallery-3.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
-            </div>
-            <div class="gs-item set-bg" data-setbg="{{ asset('assets')}}/img/gallery/gallery-4.jpg">
-                <a href="{{ asset('assets')}}/img/gallery/gallery-4.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
-            </div>
-            <div class="gs-item set-bg" data-setbg="{{ asset('assets')}}/img/gallery/gallery-5.jpg">
-                <a href="{{ asset('assets')}}/img/gallery/gallery-5.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
-            </div>
-            <div class="gs-item grid-wide set-bg" data-setbg="{{ asset('assets')}}/img/gallery/gallery-6.jpg">
-                <a href="{{ asset('assets')}}/img/gallery/gallery-6.jpg" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
-            </div>
+            @endforeach
+
         </div>
     </div>
     <!-- Gallery Section End -->
+
+
+
+    <!-- Services Section Begin -->
+    <section class="services-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <span>What we do?</span>
+                        <h2>PUSH YOUR LIMITS FORWARD</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach($daily as $rs)
+                <div class="col-lg-3 col-md-6 p-0">
+                    <div class="ss-pic">
+                        <img src="{{Storage::url($rs->image)}}" style="height: 230px" alt="">
+                    </div>
+                </div>
+                @endforeach
+
+                <div class="col-lg-3 col-md-6 p-0">
+                    <div class="ss-text">
+                        <h4>Fitness</h4>
+                        <p>Speed<br>Flexibility<br>Strength</p>
+                    </div>
+                </div>
+                <div class="col-lg-3  col-md-6 p-0">
+                    <div class="ss-text">
+                        <h4>Combat Sports</h4>
+                        <p>Boxing<br>Karate<br>Taekwondo</p>
+                    </div>
+                </div>
+                <div class="col-lg-3  col-md-6 p-0">
+                    <div class="ss-text second-row">
+                        <h4>Workout</h4>
+                        <p>Body Building<br>Weight Loose<br>Cardio</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p-0">
+                    <div class="ss-text second-row">
+                        <h4>Mind and Body</h4>
+                        <p>Pilates<br>Yoga<br>Exercises</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+
+
+
+
+    <!-- İnfo Section Start -->
+    <section class="blog-details-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 p-0 m-auto">
+                    <div class="blog-details-text">
+                        <div class="section-title">
+                            <span>Information</span>
+                            <h2>Trainers Services Schedule</h2>
+                        </div>
+
+                        {!!$setting->infopage!!}
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- İnfo Section End -->
 
     <!-- Search model Begin -->
     <div class="search-model">

@@ -13,7 +13,13 @@ class Setting extends Migration
      */
     public function up()
     {
-        //
+        if (Schema::hasColumn('settings', 'information')){
+
+            Schema::table('settings', function (Blueprint $table) {
+                $table->dropColumn('information');
+
+            });
+        }
     }
 
     /**

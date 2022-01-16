@@ -37,7 +37,7 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{route('schedule')}}">Information</a></li>
+                        <li><a href="{{route('gallery')}}">Gallery</a></li>
                         <li><a href="{{route('aboutus')}}">About Us</a></li>
                         <li><a href="{{route('faq')}}">FAQ</a></li>
                         <li><a href="{{route('contact')}}">Contact</a></li>

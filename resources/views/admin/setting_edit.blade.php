@@ -45,6 +45,12 @@
                                            aria-controls="custom-tabs-one-contact"
                                            aria-selected="false"><b>Contact Page</b></a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="custom-tabs-one-infopage-tab" data-toggle="pill"
+                                           href="#custom-tabs-one-infopage" role="tab"
+                                           aria-controls="custom-tabs-one-infopage"
+                                           aria-selected="false"><b>Information Page</b></a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="card-body">
@@ -101,6 +107,7 @@
                                             </select>
                                         </div>
                                     </div>
+
                                     <div class="tab-pane fade " id="custom-tabs-one-smtp" role="tabpanel"
                                          aria-labelledby="custom-tabs-one-smtp-tab">
                                         <div class="form-group">
@@ -124,6 +131,7 @@
                                                    class="form-control">
                                         </div>
                                     </div>
+
                                     <div class="tab-pane fade " id="custom-tabs-one-social" role="tabpanel"
                                          aria-labelledby="custom-tabs-one-social-tab">
                                         <div class="form-group">
@@ -142,6 +150,7 @@
                                                    class="form-control">
                                         </div>
                                     </div>
+
                                     <div class="tab-pane fade " id="custom-tabs-one-aboutus" role="tabpanel"
                                          aria-labelledby="custom-tabs-one-aboutus-tab">
                                         <div class="form-group">
@@ -149,6 +158,7 @@
                                             <textarea id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
                                         </div>
                                     </div>
+
                                     <div class="tab-pane fade " id="custom-tabs-one-contact" role="tabpanel"
                                          aria-labelledby="custom-tabs-one-contact-tab">
                                         <div class="form-group">
@@ -156,10 +166,21 @@
                                             <textarea id="contact" name="contact">{{$data->contact}}</textarea>
                                         </div>
                                     </div>
+
+                                    <div class="tab-pane fade " id="custom-tabs-one-infopage" role="tabpanel"
+                                         aria-labelledby="custom-tabs-one-contact-tab">
+                                        <div class="form-group">
+                                            <label><b>Information Page</b></label>
+                                            <textarea id="infopage" name="infopage">{{$data->infopage}}</textarea>
+                                        </div>
+                                    </div>
+
                                     <script>
                                         CKEDITOR.replace('aboutus');
                                         CKEDITOR.replace('contact');
+                                        CKEDITOR.replace('infopage');
                                     </script>
+
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary" style="margin-left:20px;margin-bottom: 10px">Update Setting</button>

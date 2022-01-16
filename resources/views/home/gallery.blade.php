@@ -1,11 +1,6 @@
 @extends('layouts.home')
 
-@section('title','About Us-' . $setting->title)
-
-@section('description')
-    {{$setting->description}}
-@endsection
-@section('keywords', $setting->keywords)
+@section('title','Gallery')
 
 @include('home._menu')
 
@@ -17,10 +12,10 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-text">
-                        <h2>About Us</h2>
+                        <h2>Gallery</h2>
                         <div class="bt-option">
                             <a href="{{route('home')}}">Home</a>
-                            <span>About Us</span>
+                            <span>Gallery</span>
                         </div>
                     </div>
                 </div>
@@ -29,20 +24,21 @@
     </section>
     <!-- Breadcrumb Section End -->
 
-    <section class="blog-details-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 p-0 m-auto">
-                    <div class="blog-details-text">
 
-                        {!!$setting->aboutus!!}
-
-                    </div>
-                </div>
-
+    <!-- Gallery Section Begin -->
+    <div class="gallery-section gallery-page">
+        <div class="gallery">
+            <div class="grid-sizer"></div>
+            @foreach($datalist as $rs)
+            <div class="gs-item set-bg" data-setbg="{{Storage::url($rs->image)}}">
+                <a href="{{Storage::url($rs->image)}}" class="thumb-icon image-popup"><i class="fa fa-picture-o"></i></a>
             </div>
+            @endforeach
+
         </div>
     </div>
-    </section>
+    <!-- Gallery Section End -->
+
+
     </body>
 @endsection
