@@ -17,6 +17,10 @@
             <a class="btn btn-info mb-1" href="{{route('admin_product_add')}}">Add Product</a>
         </div>
 
+        <div class="row col-lg-2">
+            @include('home.message')
+        </div>
+
         <!-- Row -->
         <div class="row">
             <!-- Datatables -->

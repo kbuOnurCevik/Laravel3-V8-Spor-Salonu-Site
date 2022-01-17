@@ -35,7 +35,7 @@ class HomeController extends Controller
 
         $setting = Setting::first();
         $slider = Product::where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(6)->inRandomOrder()->get();
-        $daily = Product::where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(4)->inRandomOrder()->get();
+        $daily = Product::where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(3)->inRandomOrder()->get();
         $last = Product::where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(3)->orderByDesc('id')->get();
         $picked = Product::where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(3)->inRandomOrder()->get();
         $gallery = Image::select('image')->limit(16)->inRandomOrder()->get();
@@ -113,7 +113,7 @@ class HomeController extends Controller
 
     public function gallery()
     {
-        $datalist = Image::select('image')->limit(28)->inRandomOrder()->get();
+        $datalist = Image::select('image')->limit(32)->inRandomOrder()->get();
         return view('home.gallery', ['datalist' => $datalist]);
     }
 

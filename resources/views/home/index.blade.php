@@ -48,7 +48,6 @@
                                 <li>Free riding</li>
                                 <li>Unlimited equipments</li>
                                 <li>Personal trainer</li>
-                                <li>Weight losing classes</li>
                                 <li>Month to mouth</li>
                                 <li>No time restriction</li>
                             </ul>
@@ -91,7 +90,6 @@
                                 <li>Free riding</li>
                                 <li>Unlimited equipments</li>
                                 <li>Personal trainer</li>
-                                <li>Weight losing classes</li>
                                 <li>Month to mouth</li>
                                 <li>No time restriction</li>
                             </ul>
@@ -133,7 +131,6 @@
                                 <li>Free riding</li>
                                 <li>Unlimited equipments</li>
                                 <li>Personal trainer</li>
-                                <li>Weight losing classes</li>
                                 <li>Month to mouth</li>
                                 <li>No time restriction</li>
                             </ul>
@@ -182,59 +179,6 @@
         </div>
     </div>
     <!-- Gallery Section End -->
-
-
-
-    <!-- Services Section Begin -->
-    <section class="services-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>What we do?</span>
-                        <h2>PUSH YOUR LIMITS FORWARD</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                @foreach($daily as $rs)
-                <div class="col-lg-3 col-md-6 p-0">
-                    <div class="ss-pic">
-                        <img src="{{Storage::url($rs->image)}}" style="height: 230px" alt="">
-                    </div>
-                </div>
-                @endforeach
-
-                <div class="col-lg-3 col-md-6 p-0">
-                    <div class="ss-text">
-                        <h4>Fitness</h4>
-                        <p>Speed<br>Flexibility<br>Strength</p>
-                    </div>
-                </div>
-                <div class="col-lg-3  col-md-6 p-0">
-                    <div class="ss-text">
-                        <h4>Combat Sports</h4>
-                        <p>Boxing<br>Karate<br>Taekwondo</p>
-                    </div>
-                </div>
-                <div class="col-lg-3  col-md-6 p-0">
-                    <div class="ss-text second-row">
-                        <h4>Workout</h4>
-                        <p>Body Building<br>Weight Loose<br>Cardio</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 p-0">
-                    <div class="ss-text second-row">
-                        <h4>Mind and Body</h4>
-                        <p>Pilates<br>Yoga<br>Exercises</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services Section End -->
-
-
 
 
     <!-- İnfo Section Start -->

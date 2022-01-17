@@ -35,6 +35,8 @@ class OrderController extends Controller
 
         $total = $request->input('price');
 
+        $startdayy = date("Y-m-d");
+
         $startday = $request->input('startday');
 
         $dataproduct = Product::find($id);
@@ -73,6 +75,7 @@ class OrderController extends Controller
         $data->save();
 
         $rs = Product::find($id);
+
         $data2 = new Orderitem;
         $data2->user_id = Auth::id();
         $data2->product_id = $rs->id;

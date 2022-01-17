@@ -50,7 +50,7 @@ class ImageController extends Controller
             $data->image = Storage::putFile('images', $request->file('image'));
         }
         $data->save();
-        return redirect()->route('admin_image_add',['product_id'=>$product_id]);
+        return redirect()->route('admin_image_add',['product_id'=>$product_id])->with('success','Image Added');
 
     }
 
@@ -99,6 +99,6 @@ class ImageController extends Controller
         $data = Image::find($id);
         $data->delete();
 
-        return redirect()->route('admin_image_add',['product_id'=>$product_id]);
+        return redirect()->route('admin_image_add',['product_id'=>$product_id])->with('success','Image Deleted');
     }
 }

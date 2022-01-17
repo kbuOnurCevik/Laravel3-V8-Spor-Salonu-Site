@@ -14,6 +14,9 @@
 
             <div class="card-body">
                 <h3 class="card-title">Product : {{$data->title}}</h3>
+                <div class="row col-lg-4">
+                    @include('home.message')
+                </div>
                 <form action="{{route('admin_image_store',['product_id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                     @csrf
 

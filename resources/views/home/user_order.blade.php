@@ -55,7 +55,9 @@
                             <h2>My Packet Orders</h2>
                             <br>
                         </div>
+                    <div class="row col-lg-4">
                         @include('home.message')
+                    </div>
                         <div class="chart-table">
                             <table>
                                 <thead>
@@ -68,7 +70,7 @@
                                     <th>Date</th>
                                     <th>Status</th>
                                     <th>Packet Details</th>
-                                    <th>Note</th>
+                                    <th>Admin Note</th>
                                 </tr>
                                 </thead>
                                 @foreach($datalist as $rs)

@@ -114,7 +114,7 @@ class ProductController extends Controller
         }
         $data->save();
 
-        return redirect()->route('admin_products');
+        return redirect()->route('admin_products')->with('success','Product Updated');
     }
 
     /**
@@ -129,6 +129,6 @@ class ProductController extends Controller
         $data = Product::find($id);
         $data->delete();
 
-        return redirect()->route('admin_products');
+        return redirect()->route('admin_products')->with('success','Product Deleted');
     }
 }

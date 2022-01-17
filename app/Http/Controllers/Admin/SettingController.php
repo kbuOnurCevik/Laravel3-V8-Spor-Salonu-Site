@@ -104,7 +104,7 @@ class SettingController extends Controller
         $data->infopage = $request->input('infopage');
         $data->status = $request->input('status');
         $data->save();
-        return redirect()->route('admin_setting');
+        return redirect()->route('admin_setting')->with('success','Updated Successfully');
     }
 
     /**

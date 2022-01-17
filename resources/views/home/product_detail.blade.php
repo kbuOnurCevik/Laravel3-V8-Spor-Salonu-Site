@@ -47,7 +47,7 @@
                                 <span>Paket Süresi: {{$data->month}} Ay</span><br><br>
                                 <span>Description</span><br>
                                 <p>{{$data->description}}</p>
-                                <span>Details</span><br>
+                                <span>Services</span><br>
                                 <span>{!! $data->detail !!}</span><br><br>
                                 <form action="{{route('user_order_add',['id'=>$data->id])}}" method="post">
                                     @csrf

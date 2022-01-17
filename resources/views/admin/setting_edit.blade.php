@@ -8,6 +8,10 @@
 @section('content')
     <div class="container-fluid" id="container-wrapper">
 
+        <div class="row col-lg-4">
+            @include('home.message')
+        </div>
+
         <div class="row">
             <div class="col-12 col-sm-12">
                 <form action="{{route('admin_setting_update')}}" method="post" enctype="multipart/form-data">
@@ -49,7 +53,7 @@
                                         <a class="nav-link" id="custom-tabs-one-infopage-tab" data-toggle="pill"
                                            href="#custom-tabs-one-infopage" role="tab"
                                            aria-controls="custom-tabs-one-infopage"
-                                           aria-selected="false"><b>Information Page</b></a>
+                                           aria-selected="false"><b>Information</b></a>
                                     </li>
                                 </ul>
                             </div>
@@ -170,7 +174,7 @@
                                     <div class="tab-pane fade " id="custom-tabs-one-infopage" role="tabpanel"
                                          aria-labelledby="custom-tabs-one-contact-tab">
                                         <div class="form-group">
-                                            <label><b>Information Page</b></label>
+                                            <label><b>Information</b></label>
                                             <textarea id="infopage" name="infopage">{{$data->infopage}}</textarea>
                                         </div>
                                     </div>
