@@ -34,10 +34,32 @@ class HomeController extends Controller
     {
 
         $setting = Setting::first();
-        $slider = Product::where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(6)->inRandomOrder()->get();
-        $daily = Product::where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(3)->inRandomOrder()->get();
-        $last = Product::where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(3)->orderByDesc('id')->get();
-        $picked = Product::where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(3)->inRandomOrder()->get();
+
+        $slider = Product::whereHas('category', function ($q) {
+            $q->whereHas('parent', function ($q2) {
+                $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
+            })->where('status', '=', 'true');
+        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(6)->inRandomOrder()->get();
+
+        $daily = Product::whereHas('category', function ($q) {
+            $q->whereHas('parent', function ($q2) {
+                $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
+            })->where('status', '=', 'true');
+        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(3)->inRandomOrder()->get();
+
+        $last = Product::whereHas('category', function ($q) {
+            $q->whereHas('parent', function ($q2) {
+                $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
+            })->where('status', '=', 'true');
+        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(3)->orderByDesc('id')->get();
+
+        $picked = Product::whereHas('category', function ($q) {
+            $q->whereHas('parent', function ($q2) {
+                $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
+            })->where('status', '=', 'true');
+        })->where('status', '=', 'true')->select('id', 'title', 'image', 'price', 'month', 'slug')->limit(3)->inRandomOrder()
+            ->get();
+
         $gallery = Image::select('image')->limit(16)->inRandomOrder()->get();
         #print_r($picked);
         # exit();
@@ -68,7 +90,7 @@ class HomeController extends Controller
 
         $search = $request->input('search');
 
-        if ($search !== null){
+        if ($search !== null) {
             $count = Product::where('status', '=', 'true')->where('title', 'like', '%' . $search . '%')->get()->count();
 
             if ($count == 1) {
@@ -77,8 +99,7 @@ class HomeController extends Controller
             } else {
                 return redirect()->route('productlist', ['search' => $search]);
             }
-        }
-        else {
+        } else {
             return redirect()->route('home');
         }
 
@@ -87,7 +108,10 @@ class HomeController extends Controller
     public function productlist($search)
     {
         $datalist = Product::where('title', 'like', '%' . $search . '%')->whereHas('category', function ($q) {
-            $q->where('status', '=', 'true');})->where('status', '=', 'true')->get();
+            $q->whereHas('parent', function ($q2) {
+                $q2->where('parent_id', '=', 0)->where('status', '=', 'true');
+            })->where('status', '=', 'true');
+        })->where('status', '=', 'true')->get();
 
         return view('home.search_products', ['search' => $search, 'datalist' => $datalist]);
     }
@@ -117,7 +141,7 @@ class HomeController extends Controller
     public function schedule()
     {
         $setting = Setting::first();
-        return view('home.schedule',['setting' => $setting]);
+        return view('home.schedule', ['setting' => $setting]);
     }
 
     public function gallery()

@@ -50,10 +50,11 @@
                                 <span>Description</span><br>
                                 <p>{{$data->description}}</p>
                                 <span>Services</span><br>
-                                <span>{!! $data->detail !!}</span><br><br>
+                                <p>Hizmetler ürünün altında yazmaktadır.</p>
                                 <form action="{{route('user_order_add',['id'=>$data->id])}}" method="post">
                                     @csrf
-                                    <p>Üyelik Başlangıç Tarihinizi Belirleyiniz.Tarih girmezseniz başlangıç tarihi bugün olacaktır.</p>
+                                    <p>Üyelik Başlangıç Tarihinizi Belirleyiniz.Tarih girmezseniz başlangıç tarihi bugün
+                                        olacaktır.</p>
                                     <input type="date" name="startday" value=<?("Y-m-d")?>>
                                     <input type="hidden" name="price" value="{{$data->price}}">
                                     <input type="hidden" name="month" value="{{$data->month}}">
@@ -85,12 +86,30 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         </div>
     </section>
     <!-- About US Section End -->
+    <section class="blog-details-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blog-details-text">
+                        <div class="section-title">
+                            <span>{{$data->title}}</span>
+                            <h2>Services and Explanation</h2>
+                        </div>
+
+                        {!! $data->detail !!}
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
 
 
     <!-- BMI Calculator Section Begin -->

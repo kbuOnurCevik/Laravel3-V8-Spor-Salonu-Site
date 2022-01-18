@@ -33,7 +33,7 @@
 
                     <div class="section-title chart-title">
                         <span>User Panel</span>
-                        <div class="chart-table">
+                        <div class="chart-table table-responsive">
                             <table>
                                 <thead>
                                 <tr>
@@ -59,7 +59,7 @@
 
                     </div>
 
-                    <div class="chart-table">
+                    <div class="chart-table table-responsive">
                         <table>
                             <thead>
                             <tr>
@@ -76,7 +76,8 @@
                             </thead>
                             @foreach($datalist as $rs)
                                 <tbody>
-                                <td>{{$rs->product->title}}</td>
+                                <td><a href="{{route('product',['id'=>$rs->product_id,'slug'=>$rs->product->slug])}}"
+                                       target="_blank">{{$rs->product->title}}</td>
                                 <td>{{$rs->order->name}}</td>
                                 <td>{{$rs->order->phone}}</td>
                                 <td>{{$rs->startdate}}</td>

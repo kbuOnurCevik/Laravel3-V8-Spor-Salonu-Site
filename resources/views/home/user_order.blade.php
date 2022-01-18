@@ -30,7 +30,7 @@
                 <div class="col-lg-12">
                     <div class="section-title chart-title">
                         <span>User Panel</span>
-                        <div class="chart-table">
+                        <div class="chart-table table-responsive">
                             <table>
                                 <thead>
                                 <tr>
