@@ -47,19 +47,19 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                       <button type="submit"   class="btn btn-primary btn-block">Login</button>
+                                        <button type="submit"   class="btn btn-primary btn-block">Login</button>
                                     </div>
                                     <hr>
-                                    <a href="index.html" class="btn btn-google btn-block">
+                                    <a href="#" class="btn btn-google btn-block">
                                         <i class="fab fa-google fa-fw"></i> Login with Google
                                     </a>
-                                    <a href="index.html" class="btn btn-facebook btn-block">
+                                    <a href="#" class="btn btn-facebook btn-block">
                                         <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                                     </a>
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="font-weight-bold small" href="register.html">Create an Account!</a>
+                                    <a class="font-weight-bold small" href="#">Create an Account!</a>
                                 </div>
                                 <div class="text-center">
                                 </div>

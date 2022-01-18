@@ -65,21 +65,30 @@ class HomeController extends Controller
 
     public function getproduct(Request $request)
     {
-        $search = $request->input('search');
-        $count = Product::where('status', '=', 'true')->where('title', 'like', '%' . $search . '%')->get()->count();
 
-        if ($count == 1) {
-            $data = Product::where('status', '=', 'true')->where('title', 'like', '%' . $search . '%')->first();
-            return redirect()->route('product', ['id' => $data->id, 'slug' => $data->slug]);
-        } else {
-            return redirect()->route('productlist', ['search' => $search]);
+        $search = $request->input('search');
+
+        if ($search !== null){
+            $count = Product::where('status', '=', 'true')->where('title', 'like', '%' . $search . '%')->get()->count();
+
+            if ($count == 1) {
+                $data = Product::where('status', '=', 'true')->where('title', 'like', '%' . $search . '%')->first();
+                return redirect()->route('product', ['id' => $data->id, 'slug' => $data->slug]);
+            } else {
+                return redirect()->route('productlist', ['search' => $search]);
+            }
+        }
+        else {
+            return redirect()->route('home');
         }
 
     }
 
     public function productlist($search)
     {
-        $datalist = Product::where('title', 'like', '%' . $search . '%')->where('status', '=', 'true')->get();
+        $datalist = Product::where('title', 'like', '%' . $search . '%')->whereHas('category', function ($q) {
+            $q->where('status', '=', 'true');})->where('status', '=', 'true')->get();
+
         return view('home.search_products', ['search' => $search, 'datalist' => $datalist]);
     }
 

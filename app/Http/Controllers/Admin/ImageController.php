@@ -44,13 +44,23 @@ class ImageController extends Controller
     public function store(Request $request,$product_id)
     {
         $data = new Image;
-        $data->title = $request->input('title');
+        $dataproduct = Product::find($product_id);
+        // $data->title = $request->input('title');
         $data->product_id = $product_id;
+        if ($request->input('title') !== null){
+            $data->title = $request->input('title');
+        }
+
         if ($request->file('image') !== null){
             $data->image = Storage::putFile('images', $request->file('image'));
         }
-        $data->save();
-        return redirect()->route('admin_image_add',['product_id'=>$product_id])->with('success','Image Added');
+        if($data->title === null || $data->image === null){
+            return redirect()->route('admin_image_add',['product_id'=>$product_id])->with('warning','Warning! Eksiksiz doldurun.');
+        }else{
+            $data->save();
+            return redirect()->route('admin_image_add',['product_id'=>$product_id])->with('success','Image Added');
+        }
+
 
     }
 

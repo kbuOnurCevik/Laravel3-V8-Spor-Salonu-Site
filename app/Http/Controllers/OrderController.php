@@ -17,9 +17,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-      $datalist = Order::where('user_id',Auth::id())->get();
+        $datalist = Order::where('user_id',Auth::id())->get();
 
-      return view('home.user_order',['datalist'=>$datalist]);
+        return view('home.user_order',['datalist'=>$datalist]);
     }
 
     /**
@@ -38,6 +38,9 @@ class OrderController extends Controller
         $startdayy = date("Y-m-d");
 
         $startday = $request->input('startday');
+
+        if($startday == null)
+            $startday = $startdayy;
 
         $dataproduct = Product::find($id);
 

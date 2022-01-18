@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-lg-2">
                 <div class="logo">
-                    <a href="/home">
+                    <a href="{{route('home')}}">
                         <img src="{{ asset('assets')}}/img/logo.png" alt="">
                     </a>
                 </div>
@@ -18,7 +18,7 @@
             <div class="col-lg-7">
                 <nav class="nav-menu">
                     <ul>
-                        <li class="active"><a href="/home">Home</a></li>
+                        <li class="active"><a href="{{route('home')}}">Home</a></li>
 
                         <li><a href="#">Categories</a>
                             <ul class="dropdown">

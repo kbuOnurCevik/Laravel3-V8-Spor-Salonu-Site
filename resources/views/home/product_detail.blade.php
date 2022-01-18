@@ -7,6 +7,8 @@
 @endsection
 @section('keywords', $data->keywords)
 
+@include('home._menu')
+
 @section('content')
     <body>
     <!-- Breadcrumb Section Begin -->
@@ -51,7 +53,7 @@
                                 <span>{!! $data->detail !!}</span><br><br>
                                 <form action="{{route('user_order_add',['id'=>$data->id])}}" method="post">
                                     @csrf
-                                    <p>Üyelik Başlangıç Tarihinizi Belirleyiniz</p>
+                                    <p>Üyelik Başlangıç Tarihinizi Belirleyiniz.Tarih girmezseniz başlangıç tarihi bugün olacaktır.</p>
                                     <input type="date" name="startday" value=<?("Y-m-d")?>>
                                     <input type="hidden" name="price" value="{{$data->price}}">
                                     <input type="hidden" name="month" value="{{$data->month}}">
@@ -146,7 +148,7 @@
                     </div>
                     <div class="chart-calculate-form">
                         <p>Görüşlerinizi bizle paylaşabilirsiniz. Bu sayede diğer kullanıcılara yardım edebilirsiniz.
-                        Aşağıdaki konu ve inceleme kısmını doldurup yorum yapınız.</p>
+                            Aşağıdaki konu ve inceleme kısmını doldurup yorum yapınız.</p>
 
                         @livewire('review',['id'=>$data->id])
 
